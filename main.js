@@ -11,6 +11,18 @@ var map = new mapboxgl.Map({
 map.on("load", function() {
   map.addSource("apts", {
     type: "geojson",
-    data: "https://drive.google.com/open?id=1Apr5vzl440PsGKj1nTQ7V4lip3KK82Np"
+    data:
+      "http://bostonopendata-boston.opendata.arcgis.com/datasets/53ea466a189b4f43b3dfb7b38fa7f3b6_1.geojson"
+  });
+
+  map.addLayer({
+    id: "apts_dens",
+    type: "fill",
+    source: "apts",
+    layout: {},
+    paint: {
+      "fill-color": "#FF0000",
+      "fill-opacity": 0.4
+    }
   });
 });
