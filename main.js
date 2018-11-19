@@ -11,8 +11,12 @@ var map = new mapboxgl.Map({
 map.on("load", function() {
   map.addSource("apts", {
     type: "geojson",
-    data:
-      "http://bostonopendata-boston.opendata.arcgis.com/datasets/53ea466a189b4f43b3dfb7b38fa7f3b6_1.geojson"
+    data: "https://cccdenhart.github.io/apt-visuals/apts.json"
+  });
+
+  map.addSource("airs", {
+    type: "geojson",
+    data: "https://cccdenhart.github.io/apt-visuals/airs.json"
   });
 
   map.addLayer({
@@ -22,7 +26,7 @@ map.on("load", function() {
     layout: {},
     paint: {
       "fill-color": "#FF0000",
-      "fill-opacity": 0.4
+      "fill-opacity": 0.5471698113207548
     }
   });
 });
